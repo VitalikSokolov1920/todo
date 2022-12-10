@@ -1,0 +1,9 @@
+<div @create class="select-list" *ngIf="isShow">
+  <div
+    (click)="selected(item)"
+    *ngFor="let item of options"
+    [ngClass]="{'select-list__item_selected': selectedItem == item}"
+    class="select-list__item">
+    {{item.value}}
+  </div>
+</div>

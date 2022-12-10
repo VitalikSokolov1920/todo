@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="header header_center header_bordered">
+    Новая задача
+  </div>
+  <div class="form-group" [formGroup]="formGroup">
+    <div class="form-group__item form-group__item_labeled">
+      <input formControlName="name" class="user-text form-group__item__input" placeholder=" "/>
+      <label class="form-group__item__label">Название задачи</label>
+      <div class="form-group__item__error"
+           *ngIf="name.touched && name.hasError('required')">
+        Введите название задачи
+      </div>
+    </div>
+    <div class="form-group__item form-group__item_labeled">
+        <input formControlName="priority" (focus)="showList()"
+               readonly
+               (appCloseOn)="clickOutside()"
+               class="user-text form-group__item__input form-group__item__input_not-resize"
+               placeholder=" "/>
+        <label class="form-group__item__label">Приоритет</label>
+        <div class="form-group__item__error"
+             *ngIf="priority.touched && priority.hasError('required')">
+          Выберите приоритет задачи
+        </div>
+      <div class="form-group__item_list">
+        <app-select-list [isShow]="show" (itemSelected)="prioritySelected($event)" [options]="options"></app-select-list>
+      </div>
+    </div>
+    <div class="form-group__item form-group__item_labeled">
+      <textarea formControlName="description" rows="4"
+                class="user-text form-group__item__input form-group__item__input_not-resize"
+                placeholder=" "></textarea>
+      <label class="form-group__item__label">Описание задачи</label>
+      <div class="form-group__item__error" *ngIf="description.touched && description.hasError('required')">
+        Выберите приоритет задачи
+      </div>
+    </div>
+  </div>
+  <div class="submit">
+    <button (click)="back()" class="btn btn_large submit_btn">Назад</button>
+    <button (click)="submit()" class="btn btn_large submit_btn">Добавить</button>
+  </div>
+</div>

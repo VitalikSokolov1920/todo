@@ -1,0 +1,18 @@
+$primary-color-red: #F44336;
+$dark-primary-color-red: #D32F2F;
+$primary-text-color-black: #212121;
+$light-primary-color-dirty-white: #FFCDD2;
+$text-color-white: #FFFFFF;
+$green: #FFEB3B;
+$accent-color-blue: #3D5AFE;
+$hover-accent-color-blue: #448AFF;
+$secondary-color-green: #757575;
+$divider-color-green: #BDBDBD;
+
+$border-radius-medium: 5px;
+$border-radius-large: 10px;
+
+@function create_border($height) {
+  @return $height solid $primary-text-color-black;
+}
+

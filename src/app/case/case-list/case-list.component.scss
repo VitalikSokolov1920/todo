@@ -1,0 +1,52 @@
+@import "src/variables";
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: calc(4% / 2);
+  row-gap: 15px;
+
+  width: calc(50% - 5px);
+}
+
+.list-item {
+  width: calc(50%  - 4% / 4);
+  border: create_border(1px);
+
+  padding: 20px;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background: inherit;
+
+    &__img {
+      &_complete {
+        &:hover {
+          background: $accent-color-blue;
+          fill: $text-color-white;
+        }
+      }
+      &_remove {
+        &:hover {
+          background: $primary-color-red;
+          fill: $text-color-white;
+        }
+      }
+    }
+  }
+
+  &__priority {
+    color: $divider-color-green;
+    background: inherit;
+  }
+
+  &__content {
+    text-overflow: ellipsis;
+    word-break: break-word;
+    background: inherit;
+  }
+}

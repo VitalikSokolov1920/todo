@@ -1,1 +1,172 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+@font-face {
+  font-family: Pacifico;
+  src: url("assets/fonts/Pacifico-Regular.ttf");
+}
+
+@font-face {
+  font-family: Crimson;
+  src: url("assets/fonts/CrimsonText-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: $primary-text-color-black;
+  background: $text-color-white;
+
+  font-size: 24px;
+
+  border: none;
+
+  font-family: Crimson, serif;
+
+  outline-color: $accent-color-blue;
+}
+
+.user-text {
+  font-family: Pacifico, serif;
+}
+
+.app-container {
+  width: 80vw;
+
+  position: relative;
+
+  margin: 0 auto 20px;
+}
+
+.header {
+  font-size: 60px;
+
+  width: 100%;
+
+  &_center {
+    text-align: center;
+  }
+  &_bordered {
+    border-bottom: create_border(1px);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  &_centered {
+    align-items: center;
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    $this: &;
+
+    &_labeled {
+      padding-top: 30px;
+
+      #{$this}_list {
+        position: relative;
+      }
+    }
+
+    &__label {
+      position: absolute;
+
+      left: 5px;
+      top: 44px;
+
+      pointer-events: none;
+
+      transition: 0.2s;
+
+      font-size: 30px;
+    }
+
+    &__input {
+      padding: 7px 5px;
+
+      width: 100%;
+
+      border-bottom: create_border(1px);
+
+      &_not-resize {
+        resize: none;
+      }
+    }
+
+    &__error {
+      color: $primary-color-red;
+
+      font-size: 20px;
+
+      position: absolute;
+      bottom: -35px;
+      left: 0;
+
+      line-height: 30px;
+    }
+
+    &__input:focus + &__label, &__input:not(:placeholder-shown) + &__label {
+      font-size: 20px;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .error-message {
+    color: $primary-color-red;
+
+    font-size: 20px;
+
+    text-align: left;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  border: create_border(1px);
+  transition: 0.2s;
+  background: $accent-color-blue;
+  color: $light-primary-color-dirty-white;
+
+  &:hover {
+    background: $hover-accent-color-blue;
+  }
+
+  &_small {
+    padding: 7px 15px;
+  }
+
+  &_large {
+    padding: 20px;
+  }
+}
+
+.img {
+  transition: 0.3s ease-in-out;
+
+  background: $light-primary-color-dirty-white;
+
+  padding: 5px;
+
+  cursor: pointer;
+  &_small {
+    width: 40px;
+    height: 40px;
+  }
+
+  &_cycle {
+    border-radius: 50%;
+  }
+
+  &_br-10 {
+    border-radius: $border-radius-large;
+  }
+}

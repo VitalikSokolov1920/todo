@@ -1,0 +1,30 @@
+<div class="list-container">
+  <ng-container *ngFor="let case1 of cases; let i = index">
+    <div class="list-item">
+      <div class="list-item__header">
+        <svg class="img img_small img_br-10 list-item__header__img_complete" xmlns="http://www.w3.org/2000/svg"
+             height="24px" viewBox="0 0 24 24"
+             width="24px" fill="#212121">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"/>
+        </svg>
+        {{case1.name}}
+        <svg class="img img_small img_br-10 list-item__header__img_remove"
+             xmlns="http://www.w3.org/2000/svg"
+             height="24px" viewBox="0 0 24 24"
+             width="24px" fill="#212121">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"/>
+        </svg>
+      </div>
+      <span class="list-item__priority">Приоритет:</span> {{case1.priority | convertPriority}}
+      <div class="list-item__content">
+        {{case1.description}}
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+
+

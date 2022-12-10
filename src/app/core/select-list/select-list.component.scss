@@ -1,0 +1,33 @@
+@import "src/variables";
+
+.select-list {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  border: create_border(1px);
+
+  border-radius: $border-radius-medium;
+
+  &__item {
+    padding: 10px 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:not(&_selected):hover {
+      color: $light-primary-color-dirty-white;
+      background: $hover-accent-color-blue;
+    }
+
+    &_selected {
+      color: $light-primary-color-dirty-white;
+      background: $accent-color-blue;
+    }
+  }
+}
